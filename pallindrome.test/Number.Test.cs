@@ -32,7 +32,7 @@
         {
             int number = -7;
             var result = _number.IsPallindrome(number);
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
         }
 
         [Test]
@@ -73,6 +73,30 @@
             int number = -121;
             var result = _number.IsPallindrome(number);
             Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void Is_1221_Returns_True()
+        {
+            int number = 1221;
+            var result = _number.IsPallindrome(number);
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void Is_22_Returns_True()
+        {
+            int number = 22;
+            var result = _number.IsPallindrome(number);
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void Is_2442_Returns_True()
+        {
+            int number = 2442;
+            var result = _number.IsPallindrome(number);
+            Assert.IsTrue(result);
         }
     }
 }

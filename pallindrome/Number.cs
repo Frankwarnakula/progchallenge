@@ -5,6 +5,10 @@
 
         public bool IsPallindrome(int number)
         {
+            if (number < 0)
+            {
+                return false;
+            }
             return (number - this.ReverseNumber(number) == 0) ? true : false;
         }
 
@@ -39,10 +43,11 @@
                     if (number < 10)
                     {
                         reverseNumber += number;
+                        number = 0;
                     }
                 }
             }
-            return reverseNumber;
+            return reverseNumber + number;
         }
     }
 }
