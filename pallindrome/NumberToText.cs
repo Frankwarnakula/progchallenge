@@ -10,7 +10,7 @@ namespace pallindrome
     {
 
         // maximum number is 2*31 minus 1 = 2147483647
-        private string remainderNumberInWords(int number)
+        private string getNumberInWords(int number)
         {
             switch (number)
             {
@@ -42,35 +42,10 @@ namespace pallindrome
                 case 70: return "Seventy";
                 case 80: return "Eighty";
                 case 90: return "Ninety";
-            }
-
-            return "";
-        }
-
-        private string tenthPowerInWords(int number)
-        {
-            switch (number)
-            {
                 case 100: return "Hundred";
                 case 1000: return "Thousand";
                 case 1000000: return "Million";
                 case 1000000000: return "Billion";
-            }
-            return "";
-        }
-
-        private string wholeNumberInWords(int number)
-        {
-            switch (number)
-            {
-                case 20: return "Twenty";
-                case 30: return "Thirty";
-                case 40: return "Forty";
-                case 50: return "Fifty";
-                case 60: return "Sixty";
-                case 70: return "Seventy";
-                case 80: return "Eighty";
-                case 90: return "Ninety";
             }
             return "";
         }
@@ -80,14 +55,14 @@ namespace pallindrome
             string numberInWords = "";
             if (number <= 20)
             {
-                numberInWords = this.remainderNumberInWords(number);
+                numberInWords = this.getNumberInWords(number);
             }
             if (number >= 20 && number < 100)
             {
                 int remainder = number % 10;
                 int whole = (number / 10) * 10;
-                numberInWords = wholeNumberInWords(whole);
-                numberInWords += remainder > 0 ? " " + remainderNumberInWords(remainder) : "";
+                numberInWords = getNumberInWords(whole);
+                numberInWords += remainder > 0 ? " " + getNumberInWords(remainder) : "";
             }
 
             return numberInWords;
@@ -101,7 +76,7 @@ namespace pallindrome
 
             if (numberOfHundreds > 0)
             {
-                numberInWords = this.remainderNumberInWords(numberOfHundreds) + " " + tenthPowerInWords(100);
+                numberInWords = this.getNumberInWords(numberOfHundreds) + " " + getNumberInWords(100);
 
                 if (remainder > 0)
                 {
@@ -129,7 +104,7 @@ namespace pallindrome
                 string currentGroupInWords = "";
                 if (number % 1000 > 0 )
                 {
-                    currentGroupInWords = numberUptoThousandToWord(number % 1000) + (power >= 1000 ? " " + tenthPowerInWords(power) : "");
+                    currentGroupInWords = numberUptoThousandToWord(number % 1000) + (power >= 1000 ? " " + getNumberInWords(power) : "");
                 }
                 inWords = currentGroupInWords + (inWords.Length > 0 ? " " : "") + inWords;
                 power *= 1000;
