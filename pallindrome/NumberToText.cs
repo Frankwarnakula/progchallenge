@@ -75,39 +75,6 @@ namespace pallindrome
             return "";
         }
 
-        private int getTenthPositionsArrayLength(int number)
-        {
-            if (number == 0)
-            {
-                return 0;
-            }
-            if (number < 10)
-            {
-                return 1;
-            }
-            int numberOf10thPower = 1;
-            while (number != 0)
-            {
-                number /= 10;
-                numberOf10thPower++;
-            }
-            return numberOf10thPower;
-        }
-
-        private int[] numberIntoArray(int number)
-        {
-            int arrayLength = getTenthPositionsArrayLength(number);
-            int[] tenthPositions = new int[arrayLength];
-            int counter = 0;
-            while (number != 0)
-            {
-                tenthPositions[counter] = number % 10;
-                number /= 10;
-                counter++;
-            }
-            return tenthPositions;
-        }
-
         private string numberUptoHundredToWord(int number)
         {
             string numberInWords = "";
