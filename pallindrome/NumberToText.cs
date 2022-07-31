@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace pallindrome
+﻿namespace pallindrome
 {
     public class NumberToText
     {
 
-        // maximum number is 2*31 minus 1 = 2147483647
+        // number is grouped as 1 234 567 891
+        // each group has a group suffix
+        // and the maximum for each grouo=p is 999
+
+        private const string SPACE = " ";
+   
         private string getNumberInWords(int number)
         {
             switch (number)
@@ -55,14 +54,16 @@ namespace pallindrome
             string numberInWords = "";
             if (number <= 20)
             {
+                // all the numbers upto 20 are unique
                 numberInWords = this.getNumberInWords(number);
             }
             if (number >= 20 && number < 100)
             {
+                // all the numbers of 10th fold are unique
                 int remainder = number % 10;
                 int whole = (number / 10) * 10;
                 numberInWords = getNumberInWords(whole);
-                numberInWords += remainder > 0 ? " " + getNumberInWords(remainder) : "";
+                numberInWords += remainder > 0 ? SPACE + getNumberInWords(remainder) : "";
             }
 
             return numberInWords;
@@ -76,11 +77,11 @@ namespace pallindrome
 
             if (numberOfHundreds > 0)
             {
-                numberInWords = this.getNumberInWords(numberOfHundreds) + " " + getNumberInWords(100);
+                numberInWords = this.getNumberInWords(numberOfHundreds) + SPACE + getNumberInWords(100);
 
                 if (remainder > 0)
                 {
-                    numberInWords += " " + numberUptoHundredToWord(remainder);
+                    numberInWords += SPACE + numberUptoHundredToWord(remainder);
                 }
             }
             else
@@ -104,9 +105,9 @@ namespace pallindrome
                 string currentGroupInWords = "";
                 if (number % 1000 > 0 )
                 {
-                    currentGroupInWords = numberUptoThousandToWord(number % 1000) + (power >= 1000 ? " " + getNumberInWords(power) : "");
+                    currentGroupInWords = numberUptoThousandToWord(number % 1000) + (power >= 1000 ? SPACE + getNumberInWords(power) : "");
                 }
-                inWords = currentGroupInWords + (inWords.Length > 0 ? " " : "") + inWords;
+                inWords = currentGroupInWords + (inWords.Length > 0 ? SPACE : "") + inWords;
                 power *= 1000;
                 number /= 1000;
             }

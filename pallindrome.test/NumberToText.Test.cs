@@ -57,6 +57,7 @@ namespace pallindrome.test
         [TestCase(1000000, "One Million")]
         [TestCase(1234567, "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven")]
         [TestCase(1234567000, "One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand")]
+        // maximum number is 2*31 minus 1 = 2147483647
         [TestCase(2147483647, "Two Billion One Hundred Forty Seven Million Four Hundred Eighty Three Thousand Six Hundred Forty Seven")]
         public void TestNumberToWords(int number, string text)
         {
