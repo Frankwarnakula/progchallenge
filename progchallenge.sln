@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pallindrome", "pallindrome\pallindrome.csproj", "{4E04AEE6-800D-407E-A572-0F96ABDE7F08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "challenge", "pallindrome\challenge.csproj", "{4E04AEE6-800D-407E-A572-0F96ABDE7F08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pallindrome.test", "pallindrome.test\pallindrome.test.csproj", "{BBAB9D89-84BB-47A4-84E8-6B44A113B965}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "challenge.test", "pallindrome.test\challenge.test.csproj", "{BBAB9D89-84BB-47A4-84E8-6B44A113B965}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

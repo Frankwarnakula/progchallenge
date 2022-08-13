@@ -1,4 +1,4 @@
-﻿namespace pallindrome.test
+﻿namespace challenge.test
 {
     [TestFixture]
     internal class NumberToTextTest
